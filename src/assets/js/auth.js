@@ -2,9 +2,10 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { doc, getDoc, getDocs, setDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 
 import { firebaseAuth, firebaseDB } from "../../config/firebase";
+import { delayTimer } from "../../helpers/helpers";
 
 const signupForm = document.getElementById("signup");
 const loginForm = document.getElementById("login");
@@ -15,6 +16,7 @@ const passwordInput = document.getElementById("password");
 
 const loginEmailInput = document.getElementById("loginEmail");
 const loginPasswordInput = document.getElementById("loginPassword");
+const loginMessage = document.getElementById("loginMessage");
 
 async function signUpUserWithEmailAndPassword(e) {
   e.preventDefault();
@@ -59,7 +61,7 @@ async function createUserDocumentFromAuth(userAuth, userName) {
       const userDocRef = doc(firebaseDB, "users", userAuth.uid);
       await setDoc(userDocRef, newUser);
     } catch (err) {
-      console.log(`error creating user`, err.message);
+      console.log(err);
     }
   }
 }
@@ -78,10 +80,10 @@ async function signInUserWithEmailAndPassword(e) {
     );
 
     const data = await getUserDocument(user);
-
-    console.log(data);
   } catch (err) {
-    console.log(err);
+    loginMessage.innerText = "Invalid Credentials";
+    await delayTimer(2);
+    loginMessage.innerText = "";
   }
 }
 

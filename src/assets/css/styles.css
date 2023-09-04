@@ -49,3 +49,6 @@ button:focus {
   transform: scale(0.98);
   color: var(--primary-white);
 }
+
+#loginMessage {
+}

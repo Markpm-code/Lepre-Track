@@ -1,0 +1,27 @@
+:root {
+  /* PLACE COLOUR SCHEME HERE */
+  --green-gradient: linear-gradient(
+    to right,
+    rgb(182, 244, 146),
+    rgb(51, 139, 147)
+  );
+}
+
+/* BASIC CSS FOR DEMO PURPOSES */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: var(--green-gradient);
+  text-align: center;
+}
+
+form {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

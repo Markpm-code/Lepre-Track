@@ -5,6 +5,10 @@
     rgb(182, 244, 146),
     rgb(51, 139, 147)
   );
+
+  --primary-white: #f9f6ee;
+
+  --box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 /* BASIC CSS FOR DEMO PURPOSES */
@@ -19,9 +23,12 @@ body {
 }
 
 form {
-  padding: 1rem;
+  padding: 2rem 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: var(--primary-white);
+  border-radius: 1rem;
+  box-shadow: var(--box-shadow);
 }

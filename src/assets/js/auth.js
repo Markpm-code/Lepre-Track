@@ -5,10 +5,7 @@ import { doc, getDoc } from "@firebase/firestore";
 export const checkAuthState = async () => {
   onAuthStateChanged(firebaseAuth, async (user) => {
     if (user) {
-      console.log(user);
       const userData = await getUserData(user);
-
-      console.log(userData);
 
       const profileIcon = document.getElementById("profile");
       profileIcon.innerHTML = `<i class="fa-solid fa-user"></i

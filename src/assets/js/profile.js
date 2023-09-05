@@ -7,7 +7,7 @@ async function renderWelcomeText() {
   console.log(user);
   const userData = await getUserData(user);
 
-  welcomeText.innerText = `Welcome back ${userData.name}`;
+  welcomeText.innerText = `Welcome back ${userData.name.toUpperCase()}`;
 }
 
 renderWelcomeText();

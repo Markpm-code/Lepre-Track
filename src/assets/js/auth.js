@@ -99,3 +99,23 @@ async function getUserDocument(userAuth) {
 
 signupForm.addEventListener("submit", signUpUserWithEmailAndPassword);
 loginForm.addEventListener("submit", signInUserWithEmailAndPassword);
+
+emailInput.addEventListener("focus", () => {
+  emailInput.classList.add("focused");
+});
+
+userNameInput.addEventListener("focus", () => {
+  userNameInput.classList.add("focused");
+});
+
+passwordInput.addEventListener("focus", () => {
+  passwordInput.classList.add("focused");
+});
+
+loginEmailInput.addEventListener("focus", () => {
+  loginEmailInput.classList.add("focused");
+});
+
+loginPasswordInput.addEventListener("focus", () => {
+  loginPasswordInput.classList.add("focused");
+});

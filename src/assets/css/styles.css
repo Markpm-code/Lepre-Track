@@ -50,5 +50,27 @@ button:focus {
   color: var(--primary-white);
 }
 
+input {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  outline: 2px solid darkslategray;
+  border: none;
+}
+
+input:focus:invalid {
+  outline-color: red;
+}
+
+input:focus:valid {
+  outline-color: green;
+}
+
+.focused:invalid {
+  outline-color: red;
+}
+.focused:valid {
+  outline-color: green;
+}
+
 #loginMessage {
 }
